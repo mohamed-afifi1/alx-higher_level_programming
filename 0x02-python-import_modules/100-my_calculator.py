@@ -21,4 +21,3 @@ if __name__ == "__main__":
         print("{} * {} = {}".format(numb1, numb2, mul(numb1, numb2)))
     elif argv[2] is "/":
         print("{} / {} = {}".format(numb1, numb2, div(numb1, numb2)))
-    
