@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-import printholberton
+import easy_print_101
