@@ -23,4 +23,4 @@ class Square(Rectangle):
         Returns:
             Return width/height
         """
-        return "[Square] {}/{}".format(self.__width, self.__height)
+        return "[Square] {}/{}".format(self.__size, self.__size)
