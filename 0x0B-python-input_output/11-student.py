@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+a module that contains a class of student
 """
 
 
