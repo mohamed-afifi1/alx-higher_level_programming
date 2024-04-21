@@ -24,8 +24,6 @@ class Student():
         if type(attrs) is list:
             dictionary = {}
             for attr in attrs:
-                if type(attr) is not str:
-                    return self.__dict__
 
                 if attr in self.__dict__:
                     dictionary[attr] = self.__dict__[attr]
