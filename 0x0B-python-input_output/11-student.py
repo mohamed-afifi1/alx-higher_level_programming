@@ -24,6 +24,8 @@ class Student():
         if type(attrs) is list:
             dictionary = {}
             for attr in attrs:
+                if type(attr) is not str:
+                    return self.__dict__
 
                 if attr in self.__dict__:
                     dictionary[attr] = self.__dict__[attr]
@@ -35,5 +37,5 @@ class Student():
         """
         a function that reloads the class from a dictionary
         """
-        for key, value in json.iteritems():
-            self.__dict__[key] = value
+        for key in json:
+            self.__dict__[key] = json[key]
