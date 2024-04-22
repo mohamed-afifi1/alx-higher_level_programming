@@ -6,7 +6,7 @@ from models.rectangle import Rectangle  # type: ignore
 class Square(Rectangle):
     """Represent a square."""
     def __init__(self, size, x=0, y=0, id=None):
-        super().__init__(size, size, x, y, id)
+        super().__init__(size, size, x, y, id=None)
 
     @property
     def size(self):
