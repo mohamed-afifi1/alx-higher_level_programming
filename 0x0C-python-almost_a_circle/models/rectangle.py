@@ -28,19 +28,9 @@ class Rectangle(Base):
         return self.__width
 
     @property
-    def height(self):
-        """Return the height of the rectangle."""
-        return self.__height
-
-    @property
-    def x(self):
-        """Return the x-coordinate of the rectangle."""
-        return self.__x
-
-    @property
-    def y(self):
-        """Return the y-coordinate of the rectangle."""
-        return self.__y
+    def width(self):
+        """Set/get the width of the Rectangle."""
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -48,7 +38,12 @@ class Rectangle(Base):
             raise TypeError("width must be an integer")
         if value <= 0:
             raise ValueError("width must be > 0")
-        self.width = value
+        self.__width = value
+
+    @property
+    def height(self):
+        """Set/get the height of the Rectangle."""
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -56,7 +51,12 @@ class Rectangle(Base):
             raise TypeError("height must be an integer")
         if value <= 0:
             raise ValueError("height must be > 0")
-        self.height = value
+        self.__height = value
+
+    @property
+    def x(self):
+        """Set/get the x coordinate of the Rectangle."""
+        return self.__x
 
     @x.setter
     def x(self, value):
@@ -64,7 +64,12 @@ class Rectangle(Base):
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
-        self.x = value
+        self.__x = value
+
+    @property
+    def y(self):
+        """Set/get the y coordinate of the Rectangle."""
+        return self.__y
 
     @y.setter
     def y(self, value):
@@ -72,7 +77,7 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
-        self.y = value
+        self.__y = value
 
     def area(self):
         """Return the area of the rectangle."""
