@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This modules Defines a rectangle model class."""
+"""This module defines a rectangle model class."""
 from models.base import Base  # type: ignore
 
 
@@ -16,10 +16,10 @@ class Rectangle(Base):
             y (int): The y coordinate of the new Rectangle.
             id (int): The identity of the new Rectangle.
         Raises:
-            TypeError: If either of width or height is not an int.
-            ValueError: If either of width or height <= 0.
-            TypeError: If either of x or y is not an int.
-            ValueError: If either of x or y < 0.
+            TypeError: If either width or height is not an int.
+            ValueError: If either width or height <= 0.
+            TypeError: If either x or y is not an int.
+            ValueError: If either x or y < 0.
         """
 
         super().__init__(id)
