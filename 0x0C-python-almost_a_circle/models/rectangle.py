@@ -98,3 +98,40 @@ class Rectangle(Base):
                                                        self.y,
                                                        self.width,
                                                        self.height)
+
+def update(self, *args, **kwargs):
+        """Update the attributes of the rectangle.
+
+        Args:
+            *args (list): A list of arguments.
+            **kwargs (dict): A dictionary of keyword arguments.
+        Raises:
+            TypeError: If either of args or kwargs is not a list or dict.
+        """
+        if args and len(args) != 0:
+            for i in range(0, len(args)):
+                if i == 0:
+                    self.id = args[i]
+                elif i == 1:
+                    self.width = args[i]
+                elif i == 2:
+                    self.height = args[i]
+                elif i == 3:
+                    self.x = args[i]
+                elif i == 4:
+                    self.y = args[i]
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
