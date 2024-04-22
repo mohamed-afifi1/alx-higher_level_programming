@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""module has a rectangle class."""
+"""Module has a rectangle class."""
 from models.base import Base  # type: ignore
 
 
