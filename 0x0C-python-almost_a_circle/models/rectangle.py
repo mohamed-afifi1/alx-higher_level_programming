@@ -28,56 +28,55 @@ class Rectangle(Base):
         return self.__width
 
     @property
-    def width(self):
-        """Set/get the width of the Rectangle."""
-        return self.__width
+    def height(self):
+        """Return the height of the rectangle."""
+        return self.__height
+
+    @property
+    def x(self):
+        """Return the x-coordinate of the rectangle."""
+        return self.__x
+
+    @property
+    def y(self):
+        """Return the y-coordinate of the rectangle."""
+        return self.__y
 
     @width.setter
     def width(self, value):
         if type(value) != int:
             raise TypeError("width must be an integer")
-        if value <= 0:
+        elif value <= 0:
             raise ValueError("width must be > 0")
-        self.__width = value
-
-    @property
-    def height(self):
-        """Set/get the height of the Rectangle."""
-        return self.__height
+        else:
+            self.__width = value
 
     @height.setter
     def height(self, value):
         if type(value) != int:
             raise TypeError("height must be an integer")
-        if value <= 0:
+        elif value <= 0:
             raise ValueError("height must be > 0")
-        self.__height = value
-
-    @property
-    def x(self):
-        """Set/get the x coordinate of the Rectangle."""
-        return self.__x
+        else:
+            self.__height = value
 
     @x.setter
     def x(self, value):
         if type(value) != int:
             raise TypeError("x must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("x must be >= 0")
-        self.__x = value
-
-    @property
-    def y(self):
-        """Set/get the y coordinate of the Rectangle."""
-        return self.__y
+        else:
+            self.__x = value
 
     @y.setter
     def y(self, value):
         if type(value) != int:
             raise TypeError("y must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("y must be >= 0")
-        self.__y = value
+        else:
+            self.__y = value
 
     def area(self):
         """Return the area of the rectangle."""
