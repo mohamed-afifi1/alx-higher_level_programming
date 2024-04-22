@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Defines a rectangle class."""
-from models.base import Base
+from models.base import Base  # type: ignore
 
 
 class Rectangle(Base):
@@ -17,10 +17,10 @@ class Rectangle(Base):
             id (int): The identity of the new Rectangle.
         """
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
@@ -43,44 +43,40 @@ class Rectangle(Base):
         return self.__y
 
     @width.setter
-    def width(self, value):
-        """Set the width of the rectangle"""
-        if type(value) != int:
+    def width(self, width):
+        """Set the width of the rectangle."""
+        if type(width) is not int:
             raise TypeError("width must be an integer")
-        elif value <= 0:
+        if width <= 0:
             raise ValueError("width must be > 0")
-        else:
-            self.__width = value
+        self.__width = width
 
     @height.setter
-    def height(self, value):
-        """Set the height of the rectangle"""
-        if type(value) != int:
+    def height(self, height):
+        """Set the height of the rectangle."""
+        if type(height) is not int:
             raise TypeError("height must be an integer")
-        elif value <= 0:
+        if height <= 0:
             raise ValueError("height must be > 0")
-        else:
-            self.__height = value
+        self.__height = height
 
     @x.setter
-    def x(self, value):
-        """Set the x-coordinate of the rectangle"""
-        if type(value) != int:
+    def x(self, x):
+        """Set the x-coordinate of the rectangle."""
+        if type(x) is not int:
             raise TypeError("x must be an integer")
-        elif value < 0:
+        if x < 0:
             raise ValueError("x must be >= 0")
-        else:
-            self.__x = value
+        self.__x = x
 
     @y.setter
-    def y(self, value):
-        """Set the y-coordinate of the rectangle"""
-        if type(value) != int:
+    def y(self, y):
+        """Set the y-coordinate of the rectangle."""
+        if type(y) is not int:
             raise TypeError("y must be an integer")
-        elif value < 0:
+        if y < 0:
             raise ValueError("y must be >= 0")
-        else:
-            self.__y = value
+        self.__y = y
 
     def area(self):
         """Return the area of the rectangle."""
@@ -102,40 +98,3 @@ class Rectangle(Base):
                                                        self.y,
                                                        self.width,
                                                        self.height)
-
-    def update(self, *args, **kwargs):
-        """Update the attributes of the rectangle.
-
-        Args:
-            *args (list): A list of arguments.
-            **kwargs (dict): A dictionary of keyword arguments.
-        Raises:
-            TypeError: If either of args or kwargs is not a list or dict.
-        """
-        if args and len(args) != 0:
-            for i in range(0, len(args)):
-                if i == 0:
-                    self.id = args[i]
-                elif i == 1:
-                    self.width = args[i]
-                elif i == 2:
-                    self.height = args[i]
-                elif i == 3:
-                    self.x = args[i]
-                elif i == 4:
-                    self.y = args[i]
-        elif kwargs and len(kwargs) != 0:
-            for key, value in kwargs.items():
-                if key == "id":
-                    if value is None:
-                        self.__init__(self.width, self.height, self.x, self.y)
-                    else:
-                        self.id = value
-                elif key == "width":
-                    self.width = value
-                elif key == "height":
-                    self.height = value
-                elif key == "x":
-                    self.x = value
-                elif key == "y":
-                    self.y = value
