@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-from models.base import Base  # type: ignore
 """Defines a rectangle class."""
+from models.base import Base  # type: ignore
 
 
 class Rectangle(Base):
