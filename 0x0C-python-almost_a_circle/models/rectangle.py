@@ -99,7 +99,7 @@ class Rectangle(Base):
                                                        self.width,
                                                        self.height)
 
-def update(self, *args, **kwargs):
+    def update(self, *args, **kwargs):
         """Update the attributes of the rectangle.
 
         Args:
