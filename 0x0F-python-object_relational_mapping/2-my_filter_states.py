@@ -18,10 +18,9 @@ if __name__ == '__main__':
         port=3306)
     mycursor = mydb.cursor()
     mycursor.execute("""select * from states where
-                     name = %s
+                     name = '{}'
                      order by
-                     states.id asc""",
-                     tuple(search_name))
+                     states.id asc""".format(search_name))
     for row in mycursor:
         print(row)
     mycursor.close()
