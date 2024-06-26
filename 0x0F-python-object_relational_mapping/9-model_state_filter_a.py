@@ -13,7 +13,7 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
     session = Session(engine)
     data = session.query(State).filter(State.name.like('%a%'))\
-        .order_by(State.id).all()
+        .order_by(State.id)
     for state in data:
         print("{}: {}".format(state.id, state.name))
     session.close()
