@@ -13,7 +13,7 @@ if __name__ == "__main__":
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     session = Session(engine)
-    data = session.query(State).filter(State.name == search)
+    data = session.query(State).filter(State.name == search).first()
     if data is None:
         print("Not found")
     else:
