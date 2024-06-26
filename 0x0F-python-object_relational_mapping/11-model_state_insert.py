@@ -15,7 +15,7 @@ if __name__ == "__main__":
     session = Session(engine)
     new_state = State(name='Louisiana')
     session.add(new_state)
-    session.commit()
     data = session.query(State).filter(State.name == 'Louisiana').first()
+    session.commit()
     print("{}".format(data.id))
     session.close()
