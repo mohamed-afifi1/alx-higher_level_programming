@@ -12,7 +12,6 @@ if __name__ == "__main__":
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     session = session(engine)
-    data = session.query(State).order_by(State.id)
-    for row in data:
+    for row in session.query(State).order_by(State.id).all():
         print("{}: {}".format(row.id, row.name))
     session.close()
