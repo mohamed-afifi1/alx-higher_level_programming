@@ -17,7 +17,7 @@ if __name__ == '__main__':
         port=3306)
     mycursor = mydb.cursor()
     mycursor.execute("""select * from states where
-                     name like 'N%'
+                     name like binary 'N%'
                      order by states.id asc""")
     for row in mycursor:
         print(row)
