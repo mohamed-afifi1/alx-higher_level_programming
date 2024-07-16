@@ -1,7 +1,5 @@
 #!/usr/bin/node
 const arr = require('./100-data.js').list;
 console.log(arr);
-for (let i = 0; i < arr.length; i++) {
-  arr[i] = arr[i] * i;
-}
-console.log(arr);
+const map = arr.map((x, i) => x * i);
+console.log(map);
